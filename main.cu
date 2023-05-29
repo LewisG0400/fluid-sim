@@ -6,27 +6,16 @@
 #include "SDL.h"
 #include <cuda.h>
 #include <cuda_gl_interop.h>
-#include "fluid/Fluid.h"
+#include "fluid/Fluid.cuh"
 
 void createTexturedQuad();
 
-// Consider looking into uchar4 type
-// https://stackoverflow.com/questions/26993351/is-there-a-penalty-to-using-char-variables-in-cuda-kernels
-// https://docs.nvidia.com/cuda/cuda-math-api/group__CUDA__MATH__INTRINSIC__SIMD.html#group__CUDA__MATH__INTRINSIC__SIMD
-__global__ void render(unsigned int *pixels, int width, int height) {
-    int x = blockIdx.x * blockDim.x + threadIdx.x;
-    int y = blockIdx.y * blockDim.y + threadIdx.y;
-    int index = (x + y * width) * 3;
-    pixels[index] = 255;
-    pixels[index + 1] = 255;
-    pixels[index + 2] = 0;
-}
-
 int main(int agrc, char *argv[]) {
     int screenWidth = 800, screenHeight = 600;
-    size_t imageSize = screenWidth * screenHeight * 3 * sizeof(int);
+    size_t imageSize = screenWidth * screenHeight * 3 * sizeof(float);
     bool running = true;
 
+    std::cout << -1 % 7 << std::endl;
     cudaError_t cErr;
 
     std::cout << "Done init" << std::endl;
@@ -34,7 +23,7 @@ int main(int agrc, char *argv[]) {
     SDL_Init(SDL_INIT_VIDEO);
 
     SDL_Window *window = SDL_CreateWindow(
-            "Fluid",
+            "SDL2Test",
             SDL_WINDOWPOS_UNDEFINED,
             SDL_WINDOWPOS_UNDEFINED,
             screenWidth,
@@ -48,9 +37,10 @@ int main(int agrc, char *argv[]) {
     if(cErr != cudaSuccess) std::cout << "Error Setting up device: " << cudaGetErrorString(cErr) << std::endl;
 
     glewInit();
-    glViewport(0, 0, screenWidth, screenHeight);
 
-    Fluid *fluid = new Fluid();
+    glClearColor(1.0, 0.0, 0.0, 1.0);
+
+    Fluid *fluid = new Fluid(screenWidth, screenHeight, 50, 50);
 
     SDL_Event event;
     while(running) {
@@ -58,8 +48,12 @@ int main(int agrc, char *argv[]) {
         if(event.type == SDL_QUIT) {
             running = false;
         }
+        glClear(GL_COLOR_BUFFER_BIT);
+        glDisable(GL_DEPTH_TEST);
 
         fluid->render();
+
+        std::cout << "Frame done" << std::endl;
 
         SDL_GL_SwapWindow(window);
     }

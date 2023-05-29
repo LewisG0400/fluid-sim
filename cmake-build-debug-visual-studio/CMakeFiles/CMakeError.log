@@ -1,0 +1,11 @@
+Determining if the include file pthread.h exists failed with the following output:
+Change Dir: C:/Users/lewis/CLionProjects/AcceleratedPathTracer/cmake-build-debug-visual-studio/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/Program Files/JetBrains/CLion 2021.3.3/bin/ninja/win/ninja.exe cmTC_ef3c5 && [1/2] Building CXX object CMakeFiles\cmTC_ef3c5.dir\CheckIncludeFile.cxx.obj
+FAILED: CMakeFiles/cmTC_ef3c5.dir/CheckIncludeFile.cxx.obj 
+C:\PROGRA~2\MICROS~4\2019\BUILDT~1\VC\Tools\MSVC\1429~1.301\bin\Hostx64\x64\cl.exe  /nologo /TP   /DWIN32 /D_WINDOWS /EHsc  /Zi /Ob0 /Od /RTC1 -MDd /showIncludes /FoCMakeFiles\cmTC_ef3c5.dir\CheckIncludeFile.cxx.obj /FdCMakeFiles\cmTC_ef3c5.dir\ /FS -c C:\Users\lewis\CLionProjects\AcceleratedPathTracer\cmake-build-debug-visual-studio\CMakeFiles\CMakeTmp\CheckIncludeFile.cxx
+C:\Users\lewis\CLionProjects\AcceleratedPathTracer\cmake-build-debug-visual-studio\CMakeFiles\CMakeTmp\CheckIncludeFile.cxx(1): fatal error C1083: Cannot open include file: 'pthread.h': No such file or directory
+ninja: build stopped: subcommand failed.
+
+
+

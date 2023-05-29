@@ -1,0 +1,11 @@
+# ninja log v5
+7	792	7064605871590150	CMakeFiles/AcceleratedPathTracer.dir/utils/TexturedQuad.cpp.obj	cb8c24dcb83fbeba
+0	17	0	clean	b72c21c3e92959a
+3	3229	7069069300886089	CMakeFiles/AcceleratedPathTracer.dir/main.cu.obj	68204c4a83dc6ee7
+3230	4060	7069069309226008	CMakeFiles/AcceleratedPathTracer.dir/cmake_device_link.obj	5f29c8d82a2e4b87
+4060	4183	7069069310325765	AcceleratedPathTracer.exe	b9968c6436d4042c
+3	1825	7069068758107294	CMakeFiles/AcceleratedPathTracer.dir/fluid/updateFluid.cu.obj	3c59d4003fdd6db
+5	3634	7069066510446785	CMakeFiles/AcceleratedPathTracer.dir/fluid/Fluid.cu.obj	4be374a68c9d90d3
+3	3298	7069069535094739	CMakeFiles/AcceleratedPathTracer.dir/main.cu.obj	68204c4a83dc6ee7
+3298	4116	7069069543360463	CMakeFiles/AcceleratedPathTracer.dir/cmake_device_link.obj	5f29c8d82a2e4b87
+4116	4290	7069069544870458	AcceleratedPathTracer.exe	b9968c6436d4042c

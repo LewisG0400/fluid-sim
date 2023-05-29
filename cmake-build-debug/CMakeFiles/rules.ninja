@@ -6,7 +6,7 @@
 # It is included in the main 'build.ninja'.
 
 # =============================================================================
-# Project: Fluid_Sim
+# Project: AcceleratedPathTracer
 # Configurations: Debug
 # =============================================================================
 # =============================================================================
@@ -20,7 +20,7 @@ msvc_deps_prefix = Note: including file:
 #############################################
 # Rule for compiling CUDA files.
 
-rule CUDA_COMPILER__Fluid_Sim_Debug
+rule CUDA_COMPILER__AcceleratedPathTracer_Debug
   depfile = $DEP_FILE
   deps = gcc
   command = C:\PROGRA~1\NVIDIA~2\CUDA\v11.6\bin\nvcc.exe -forward-unknown-to-host-compiler $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -x cu -dc $in -o $out -Xcompiler=-Fd$TARGET_COMPILE_PDB,-FS
@@ -30,7 +30,7 @@ rule CUDA_COMPILER__Fluid_Sim_Debug
 #############################################
 # Rule for compiling CXX files.
 
-rule CXX_COMPILER__Fluid_Sim_Debug
+rule CXX_COMPILER__AcceleratedPathTracer_Debug
   deps = msvc
   command = C:\PROGRA~2\MICROS~4\2019\BUILDT~1\VC\Tools\MSVC\1429~1.301\bin\Hostx64\x64\cl.exe  /nologo /TP $DEFINES $INCLUDES $FLAGS /showIncludes /Fo$out /Fd$TARGET_COMPILE_PDB /FS -c $in
   description = Building CXX object $out
@@ -39,7 +39,7 @@ rule CXX_COMPILER__Fluid_Sim_Debug
 #############################################
 # Rule for linking CXX executable.
 
-rule CXX_EXECUTABLE_DEVICE_LINKER__Fluid_Sim_Debug
+rule CXX_EXECUTABLE_DEVICE_LINKER__AcceleratedPathTracer_Debug
   command = C:\PROGRA~1\NVIDIA~2\CUDA\v11.6\bin\nvcc.exe -forward-unknown-to-host-compiler $LANGUAGE_COMPILE_FLAGS $LINK_FLAGS -Wno-deprecated-gpu-targets -shared -dlink $in -o $TARGET_FILE $LINK_PATH $LINK_LIBRARIES -Xcompiler=-Fd$TARGET_COMPILE_PDB,-FS
   description = Linking CXX executable $TARGET_FILE
   restat = $RESTAT
@@ -48,7 +48,7 @@ rule CXX_EXECUTABLE_DEVICE_LINKER__Fluid_Sim_Debug
 #############################################
 # Rule for linking CXX executable.
 
-rule CXX_EXECUTABLE_LINKER__Fluid_Sim_Debug
+rule CXX_EXECUTABLE_LINKER__AcceleratedPathTracer_Debug
   command = cmd.exe /C "$PRE_LINK && "C:\Program Files\JetBrains\CLion 2021.3.3\bin\cmake\win\bin\cmake.exe" -E vs_link_exe --intdir=$OBJECT_DIR --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100220~1.0\x64\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100220~1.0\x64\mt.exe --manifests $MANIFESTS -- C:\PROGRA~2\MICROS~4\2019\BUILDT~1\VC\Tools\MSVC\1429~1.301\bin\Hostx64\x64\link.exe /nologo $in  /out:$TARGET_FILE /implib:$TARGET_IMPLIB /pdb:$TARGET_PDB /version:0.0 $LINK_FLAGS $LINK_PATH $LINK_LIBRARIES && $POST_BUILD"
   description = Linking CXX executable $TARGET_FILE
   restat = $RESTAT
@@ -66,7 +66,7 @@ rule CUSTOM_COMMAND
 # Rule for re-running cmake.
 
 rule RERUN_CMAKE
-  command = "C:\Program Files\JetBrains\CLion 2021.3.3\bin\cmake\win\bin\cmake.exe" --regenerate-during-build -SC:\Users\lewis\Documents\Programming\CUDA\Fluid-Sim -BC:\Users\lewis\Documents\Programming\CUDA\Fluid-Sim\cmake-build-debug
+  command = "C:\Program Files\JetBrains\CLion 2021.3.3\bin\cmake\win\bin\cmake.exe" --regenerate-during-build -SC:\Users\lewis\CLionProjects\AcceleratedPathTracer -BC:\Users\lewis\CLionProjects\AcceleratedPathTracer\cmake-build-debug
   description = Re-running CMake...
   generator = 1
 
