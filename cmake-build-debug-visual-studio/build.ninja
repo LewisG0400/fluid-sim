@@ -76,6 +76,15 @@ build CMakeFiles\AcceleratedPathTracer.dir\fluid\updateFluid.cu.obj: CUDA_COMPIL
   TARGET_COMPILE_PDB = CMakeFiles\AcceleratedPathTracer.dir\
   TARGET_PDB = AcceleratedPathTracer.pdb
 
+build CMakeFiles\AcceleratedPathTracer.dir\fluid\getFieldIndex.cu.obj: CUDA_COMPILER__AcceleratedPathTracer_Debug C$:\Users\lewis\CLionProjects\AcceleratedPathTracer\fluid\getFieldIndex.cu || cmake_object_order_depends_target_AcceleratedPathTracer
+  DEP_FILE = CMakeFiles\AcceleratedPathTracer.dir\fluid\getFieldIndex.cu.obj.d
+  FLAGS = -D_WINDOWS -Xcompiler=" /EHsc" -Xcompiler="-Zi -Ob0 -Od /RTC1" --generate-code=arch=compute_52,code=[compute_52,sm_52] -Xcompiler=-MDd -std=c++17
+  INCLUDES = -IC:\libs\SDL2\include -IC:\libs\include
+  OBJECT_DIR = CMakeFiles\AcceleratedPathTracer.dir
+  OBJECT_FILE_DIR = CMakeFiles\AcceleratedPathTracer.dir\fluid
+  TARGET_COMPILE_PDB = CMakeFiles\AcceleratedPathTracer.dir\
+  TARGET_PDB = AcceleratedPathTracer.pdb
+
 
 # =============================================================================
 # Device Link build statements for EXECUTABLE target AcceleratedPathTracer
@@ -84,7 +93,7 @@ build CMakeFiles\AcceleratedPathTracer.dir\fluid\updateFluid.cu.obj: CUDA_COMPIL
 #############################################
 # Link the executable CMakeFiles\AcceleratedPathTracer.dir\cmake_device_link.obj
 
-build CMakeFiles\AcceleratedPathTracer.dir\cmake_device_link.obj: CUDA_EXECUTABLE_DEVICE_LINKER__AcceleratedPathTracer_Debug CMakeFiles\AcceleratedPathTracer.dir\main.cu.obj CMakeFiles\AcceleratedPathTracer.dir\fluid\Fluid.cu.obj CMakeFiles\AcceleratedPathTracer.dir\fluid\updateFluid.cu.obj | C$:\libs\SDL2\lib\x64\SDL2.lib C$:\libs\SDL2\lib\x64\SDL2main.lib C$:\libs\lib\glew32.lib
+build CMakeFiles\AcceleratedPathTracer.dir\cmake_device_link.obj: CUDA_EXECUTABLE_DEVICE_LINKER__AcceleratedPathTracer_Debug CMakeFiles\AcceleratedPathTracer.dir\main.cu.obj CMakeFiles\AcceleratedPathTracer.dir\fluid\Fluid.cu.obj CMakeFiles\AcceleratedPathTracer.dir\fluid\updateFluid.cu.obj CMakeFiles\AcceleratedPathTracer.dir\fluid\getFieldIndex.cu.obj | C$:\libs\SDL2\lib\x64\SDL2.lib C$:\libs\SDL2\lib\x64\SDL2main.lib C$:\libs\lib\glew32.lib
   LANGUAGE_COMPILE_FLAGS = -D_WINDOWS -Xcompiler=" /EHsc" -Xcompiler="-Zi -Ob0 -Od /RTC1" --generate-code=arch=compute_52,code=[compute_52,sm_52] -Xcompiler=-MDd
   LINK_LIBRARIES = C:\libs\SDL2\lib\x64\SDL2.lib C:\libs\SDL2\lib\x64\SDL2main.lib C:\libs\lib\glew32.lib opengl32.lib glu32.lib cudadevrt.lib cudart_static.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib
   OBJECT_DIR = CMakeFiles\AcceleratedPathTracer.dir
@@ -100,7 +109,7 @@ build CMakeFiles\AcceleratedPathTracer.dir\cmake_device_link.obj: CUDA_EXECUTABL
 #############################################
 # Link the executable AcceleratedPathTracer.exe
 
-build AcceleratedPathTracer.exe: CUDA_EXECUTABLE_LINKER__AcceleratedPathTracer_Debug CMakeFiles\AcceleratedPathTracer.dir\main.cu.obj CMakeFiles\AcceleratedPathTracer.dir\fluid\Fluid.cu.obj CMakeFiles\AcceleratedPathTracer.dir\fluid\updateFluid.cu.obj CMakeFiles\AcceleratedPathTracer.dir\cmake_device_link.obj | C$:\libs\SDL2\lib\x64\SDL2.lib C$:\libs\SDL2\lib\x64\SDL2main.lib C$:\libs\lib\glew32.lib
+build AcceleratedPathTracer.exe: CUDA_EXECUTABLE_LINKER__AcceleratedPathTracer_Debug CMakeFiles\AcceleratedPathTracer.dir\main.cu.obj CMakeFiles\AcceleratedPathTracer.dir\fluid\Fluid.cu.obj CMakeFiles\AcceleratedPathTracer.dir\fluid\updateFluid.cu.obj CMakeFiles\AcceleratedPathTracer.dir\fluid\getFieldIndex.cu.obj CMakeFiles\AcceleratedPathTracer.dir\cmake_device_link.obj | C$:\libs\SDL2\lib\x64\SDL2.lib C$:\libs\SDL2\lib\x64\SDL2main.lib C$:\libs\lib\glew32.lib
   FLAGS = -D_WINDOWS -Xcompiler=" /EHsc" -Xcompiler="-Zi -Ob0 -Od /RTC1" --generate-code=arch=compute_52,code=[compute_52,sm_52] -Xcompiler=-MDd
   LINK_FLAGS = /debug /INCREMENTAL
   LINK_LIBRARIES = C:\libs\SDL2\lib\x64\SDL2.lib  C:\libs\SDL2\lib\x64\SDL2main.lib  C:\libs\lib\glew32.lib  opengl32.lib  glu32.lib  cudadevrt.lib  cudart_static.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib

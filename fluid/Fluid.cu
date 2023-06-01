@@ -24,7 +24,7 @@ __global__ void setPixels(FieldCell *field, int fieldWidth, int fieldHeight, flo
     pixels[pixel_index + 2] = density;
 }
 
-Fluid::Fluid(int screenWidth, int screenHeight, int fieldWidth, int fieldHeight) :
+Fluid::Fluid(unsigned int screenWidth, unsigned int screenHeight, unsigned int fieldWidth, unsigned int fieldHeight) :
 m_screenWidth(screenWidth), m_screenHeight(screenHeight), m_fieldWidth(fieldWidth), m_fieldHeight(fieldHeight) {
     cudaError_t cErr;
 
@@ -32,6 +32,7 @@ m_screenWidth(screenWidth), m_screenHeight(screenHeight), m_fieldWidth(fieldWidt
 
     cudaMalloc(&m_fluidField1, fieldWidth * fieldHeight * sizeof(FieldCell));
     cudaMemset(m_fluidField1, 0, fieldWidth * fieldHeight * sizeof(FieldCell));
+    cudaMemset(m_fluidField1 + (fieldWidth / 2) + ((fieldHeight / 2) * fieldWidth), 0x3f80 , 1000);
 
     cudaMalloc(&m_fluidField2, fieldWidth * fieldHeight * sizeof(FieldCell));
     cudaMemset(m_fluidField2, 0, fieldWidth * fieldHeight * sizeof(FieldCell));

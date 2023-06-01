@@ -11,11 +11,9 @@
 void createTexturedQuad();
 
 int main(int agrc, char *argv[]) {
-    int screenWidth = 800, screenHeight = 600;
-    size_t imageSize = screenWidth * screenHeight * 3 * sizeof(float);
+    int screenWidth = 1200, screenHeight = 960;
     bool running = true;
 
-    std::cout << -1 % 7 << std::endl;
     cudaError_t cErr;
 
     std::cout << "Done init" << std::endl;

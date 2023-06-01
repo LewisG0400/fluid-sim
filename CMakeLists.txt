@@ -23,7 +23,7 @@ include_directories(${GLEW_INCLUDE_DIRS})
 
 message(STATUS ${GLEW_LIBRARIES})
 
-add_executable(AcceleratedPathTracer main.cu fluid/Fluid.cu fluid/Fluid.cuh fluid/updateFluid.cu fluid/Particle.h)
+add_executable(AcceleratedPathTracer main.cu fluid/Fluid.cu fluid/Fluid.cuh fluid/updateFluid.cu fluid/Particle.h fluid/getFieldIndex.cu)
 set_target_properties(AcceleratedPathTracer PROPERTIES
         CUDA_SEPARABLE_COMPILATION ON)
 
